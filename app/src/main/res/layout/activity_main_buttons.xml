@@ -1,0 +1,38 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+<RelativeLayout
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:id="@+id/activity_main_buttons"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rvLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+        android:visibility="gone"
+        android:text="@string/start"
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/stop"
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+</RelativeLayout>
+
+</layout>
