@@ -36,14 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         list = songViewModel.getSongsUrls()
 
-
-//        binding.buttonStart.setOnClickListener{
-//            //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
-//           startSongService()
-//        }
-
         binding.buttonStop.setOnClickListener{
-            //startActivity(Intent(this@Main2Activity,MainActivity::class.java))
             stopSongService()
         }
 
@@ -55,12 +48,6 @@ class MainActivity : AppCompatActivity() {
         stopSongService()
     }
 
-    private fun startSongService() {
-        list = songViewModel.getSongsUrls()
-        launchIntent = Intent(this@MainActivity,SoundService::class.java)
-        launchIntent.putExtra("songUrl",list.get(1).songUrl)
-        startService(launchIntent)
-    }
 
     private fun stopSongService() {
         stopService(Intent(this@MainActivity,SoundService::class.java))

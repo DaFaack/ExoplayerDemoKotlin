@@ -13,10 +13,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SoundService : Service() {
 
-
-    @Inject
-    lateinit var songRepository: SongRepository
-
     @Inject
     lateinit var player: ExoPlayer
 
@@ -28,7 +24,7 @@ class SoundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         try {
             if (intent != null) {
-                var songUrl = intent.getStringExtra("songUrl")!!
+                val songUrl = intent.getStringExtra("songUrl")!!
                 addMP3(songUrl)
             }
         } catch (e:Exception) {
@@ -41,8 +37,6 @@ class SoundService : Service() {
 
 
     private fun addMP3(songUrl:String) {
-
-//        var list = songRepository.getSongsUrls()
 
         // Build the media item.
         val mediaItem = MediaItem.fromUri(songUrl)
