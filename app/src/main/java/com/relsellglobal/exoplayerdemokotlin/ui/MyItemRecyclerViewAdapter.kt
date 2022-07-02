@@ -1,21 +1,18 @@
 
 package com.relsellglobal.exoplayerdemokotlin.ui
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.relsellglobal.exoplayerdemokotlin.Main2Activity
+import com.relsellglobal.exoplayerdemokotlin.MainActivity
 import com.relsellglobal.exoplayerdemokotlin.R
 import com.relsellglobal.exoplayerdemokotlin.databinding.FragmentItemBinding
 import com.relsellglobal.exoplayerdemokotlin.models.Song
-import javax.inject.Inject
 
 /**
  * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
@@ -52,7 +49,7 @@ class MyItemRecyclerViewAdapter (
         holder.mContentView.text = item.songName
 
         holder.startButton.setOnClickListener{
-            val des = if(activity is Main2Activity) activity else null
+            val des = if(activity is MainActivity) activity else null
             des?.fragmentRVClickListener(position,1)
         }
     }
